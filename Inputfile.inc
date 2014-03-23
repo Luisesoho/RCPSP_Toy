@@ -1,105 +1,105 @@
 set r / 
-r53
+r1
 /; 
 
 set j / 
 Q 
-j518
-j519
-j520
-j521
-j522
-j523
-j524
-j525
-j526
+j1
+j2
+j3
+j4
+j5
+j6
+j7
+j8
+j9
 S 
 /; 
 
-set t /t0*t50/; 
+set t /t0*t33/; 
 
 VN(h,j)=no; 
-VN('Q','j518')=yes;
-VN('j518','S')=yes;
-VN('Q','j519')=yes;
-VN('j519','S')=yes;
-VN('Q','j520')=yes;
-VN('j520','S')=yes;
-VN('Q','j521')=yes;
-VN('j521','S')=yes;
-VN('Q','j522')=yes;
-VN('j522','S')=yes;
-VN('Q','j523')=yes;
-VN('j523','S')=yes;
-VN('Q','j524')=yes;
-VN('j524','S')=yes;
-VN('Q','j525')=yes;
-VN('j525','S')=yes;
-VN('Q','j526')=yes;
-VN('j526','S')=yes;
+VN('Q','j1')=yes;
+VN('j1','S')=yes;
+VN('Q','j2')=yes;
+VN('j2','S')=yes;
+VN('Q','j3')=yes;
+VN('j3','S')=yes;
+VN('Q','j4')=yes;
+VN('j4','S')=yes;
+VN('Q','j5')=yes;
+VN('j5','S')=yes;
+VN('Q','j6')=yes;
+VN('j6','S')=yes;
+VN('Q','j7')=yes;
+VN('j7','S')=yes;
+VN('Q','j8')=yes;
+VN('j8','S')=yes;
+VN('Q','j9')=yes;
+VN('j9','S')=yes;
 
-VN('j518','j519')=yes; 
-VN('j518','j520')=yes; 
-VN('j519','j521')=yes; 
-VN('j520','j524')=yes; 
-VN('j521','j522')=yes; 
-VN('j521','j523')=yes; 
-VN('j522','j525')=yes; 
-VN('j522','j526')=yes; 
-VN('j523','j524')=yes; 
-VN('j524','j526')=yes; 
+VN('j1','j2')=yes; 
+VN('j1','j3')=yes; 
+VN('j2','j4')=yes; 
+VN('j3','j7')=yes; 
+VN('j4','j5')=yes; 
+VN('j4','j6')=yes; 
+VN('j5','j8')=yes; 
+VN('j5','j9')=yes; 
+VN('j6','j7')=yes; 
+VN('j7','j9')=yes; 
 
 parameter 
 d(j) / 
 Q   0
 S   0
-j518   2
-j519   4
-j520   3
-j521   7
-j522   2
-j523   1
-j524   5
-j525   2
-j526   7
+j1   2
+j2   4
+j3   3
+j4   7
+j5   2
+j6   1
+j7   5
+j8   2
+j9   7
 /
 FEZ(j) /
 Q   0
 S   0
-j518   2
-j519   6
-j520   5
-j521   13
-j522   15
-j523   14
-j524   19
-j525   17
-j526   26
+j1   2
+j2   6
+j3   5
+j4   13
+j5   15
+j6   14
+j7   19
+j8   17
+j9   26
 /
 SEZ(j) /
 Q   0
-S   50
-j518   2
-j519   6
-j520   14
-j521   13
-j522   19
-j523   14
-j524   19
-j525   26
-j526   26
+S 33
+j1   2
+j2   6
+j3   14
+j4   13
+j5   19
+j6   14
+j7   19
+j8   26
+j9   26
 /
 Kap(r) /
-r53   9
+r1   9
 /;
 
 k(j,r)=0;
-k('j518','r53')=1;
-k('j519','r53')=2;
-k('j520','r53')=6;
-k('j521','r53')=1;
-k('j522','r53')=1;
-k('j523','r53')=2;
-k('j524','r53')=2;
-k('j525','r53')=1;
-k('j526','r53')=8;
+k('j1','r1')=1;
+k('j2','r1')=2;
+k('j3','r1')=6;
+k('j4','r1')=1;
+k('j5','r1')=1;
+k('j6','r1')=2;
+k('j7','r1')=2;
+k('j8','r1')=1;
+k('j9','r1')=8;

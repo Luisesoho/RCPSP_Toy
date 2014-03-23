@@ -129,7 +129,7 @@ class JobsController < ApplicationController
     printf(f, "S \n")
     printf(f, "/; \n\n")
 
-    printf(f, "set t /t0*t50/; \n\n")
+    printf(f, "set t /t0*t"+Job.sum(:duration).to_s+"/; \n\n")
 
     printf(f, "VN(h,j)=no; \n")
     @jobs.each do |jo|
@@ -159,7 +159,7 @@ class JobsController < ApplicationController
 
     printf(f, "SEZ(j) /\n")
     printf(f, "Q   0\n")
-    printf(f, "S   50\n")
+    printf(f, "S "+ Job.sum(:duration).to_s+"\n")
     @jobs = Job.all
     @jobs.each {|jo| printf(f, "j"+jo.id.to_s + "   " + jo.sez.to_s + "\n" ) }
     printf(f, "/\n")
