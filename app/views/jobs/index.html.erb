@@ -1,39 +1,58 @@
 <% provide(:title, 'All jobs') %>
-<h1>Jobs</h1>
 
 <% if @objective_function_value!=nil %>
-    Objective function value: <b><%=   @objective_function_value %></b><br>   <br>   <br>
-<% end %>
-
-<table class="table" id="jobs">
-  <tr>
-    <th>Name</th>
-    <th>Duration</th>
-    <th>FEZ</th>
-    <th>SSZ</th>
-    <th>SEZ</th>
-    <th>Begin</th>
-    <th>End</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @jobs.each do |job| %>
+<h1>Solution</h1>
+Objective function value: <b><%=   @objective_function_value %></b><br>   <br>   <br>
+    <table class="table" id="jobs">
       <tr>
-        <td><%= job.name %></td>
-        <td><%= job.duration %></td>
-        <td><%= job.fez %></td>
-        <td><%= job.ssz %></td>
-        <td><%= job.sez %></td>
-        <td><%= job.begin %></td>
-        <td><%= job.end %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Update', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>FEZ</th>
+        <th>SEZ</th>
+        <th>Begin</th>
+        <th>End</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-  <% end %>
-</table>
+
+      <% @jobs.each do |job| %>
+          <tr>
+            <td><%= job.name %></td>
+            <td><%= job.duration %></td>
+            <td><%= job.fez %></td>
+            <td><%= job.sez %></td>
+            <td><%= job.begin %></td>
+            <td><%= job.end %></td>
+            <td><%= link_to 'Show', job %></td>
+            <td><%= link_to 'Update', edit_job_path(job) %></td>
+            <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+    </table>
+
+<%else%>
+<h1>Jobs</h1>
+    <table class="table" id="jobs">
+      <tr>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>FEZ</th>
+        <th>SEZ</th>
+        <th></th>
+      </tr>
+
+      <% @jobs.each do |job| %>
+          <tr>
+            <td><%= job.name %></td>
+            <td><%= job.duration %></td>
+            <td><%= job.fez %></td>
+            <td><%= job.sez %></td>
+            <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
 
 <br/>
 
@@ -42,9 +61,6 @@
 <div class="navigation-left" style="float:left">
   &lArr;  <%= link_to 'Go Back to Resources', resources_path %>  </div>
 <div class="navigation-left" style="float:right">
-<%= link_to 'Continue with Relations', relations_path %>     &#8658;    </div>
- <br>
+<%= link_to 'Continue with Relations', relations_path %>     &#8658;    </div> <br>
 <div class="navigation-left" style="float:left">
-  &lArr; <%= link_to  'Go to Main menu', current_user %>    </div><br>
-<div class="nagigation-left" style="float:left">
-  &lArr; <%= link_to  'Go to Update menu', current_user %>    </div>
+  &lArr; <%= link_to  'Go to Main Menu', current_user %>    </div><br>

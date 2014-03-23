@@ -20,6 +20,7 @@ class JobsController < ApplicationController
     end
   end
 
+
   def show
     @job = Job.find(params[:id])
   end
@@ -100,8 +101,8 @@ class JobsController < ApplicationController
 
     @jobs = Job.all
     @jobs.each { |jo|
-      jo.begin=0.0
-      jo.end=0.0
+      jo.begin=nil
+      jo.end=nil
       jo.save
     }
 
@@ -184,12 +185,6 @@ class JobsController < ApplicationController
       flash[:error] = "Optimization failed"
     end
 
-    redirect_to current_user
-  end
-
-
-  def read_solution
-
     if File.exist?("Outputfile.txt")
       fi=File.open("Outputfile.txt", "r")
       line=fi.readline
@@ -213,10 +208,14 @@ class JobsController < ApplicationController
       flash.now[:not_available] = "Problem not solved!"
       @jobs = Job.all
       redirect_to jobs_url
-     end
+    end
   end
 
+
   def load_project
+    if File.exists?("Outputfile.txt")
+      File.delete("Outputfile.txt")
+    end
     system "rake db:reset_data"
     system "rake db:sample_project"
     flash[:success] = "Sample Project loaded!"

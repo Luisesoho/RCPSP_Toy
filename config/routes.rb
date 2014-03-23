@@ -8,7 +8,6 @@ SampleApp::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
@@ -22,7 +21,6 @@ SampleApp::Application.routes.draw do
   match 'users/update_project', :to => 'users#update_project'
   match 'jobs/delete_solution', :to => 'jobs#delete_solution'
   match 'jobs/solve_problem', :to => 'jobs#solve_problem'
-  match 'jobs/read_solution', :to => 'jobs#read_solution'
   match 'jobs/load_project', :to => 'jobs#load_project'
   match 'jobs/calc_fezsez', :to => 'jobs#calc_fezsez'
 

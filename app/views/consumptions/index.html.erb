@@ -5,8 +5,6 @@
     <th>Ressource</th>
     <th>Consumption</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
   <% @consumptions.each do |consumption| %>
@@ -14,8 +12,6 @@
         <td><%= consumption.job.name %></td>
         <td><%= consumption.resource.name %></td>
         <td><%= consumption.consumption %></td>
-        <td><%= link_to 'Show', consumption %></td>
-        <td><%= link_to 'Update', edit_consumption_path(consumption) %></td>
         <td><%= link_to 'Destroy', consumption, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
   <% end %>
@@ -26,9 +22,6 @@
 <%= link_to 'Create a new Consumption', new_consumption_path %><br> <br>
 
 <div class="navigation-left" style="float:left">
-  &lArr;  <%= link_to 'Go Back to Relations', relations_path %>  </div>
-<br>
+  &lArr;  <%= link_to 'Go Back to Relations', relations_path %>  </div><br>
 <div class="navigation-left" style="float:left">
-  &lArr; <%= link_to  'Go to Main menu', current_user %>    </div><br>
-<div class="nagigation-left" style="float:left">
-  &lArr; <%= link_to  'Go to Update menu', current_user %>    </div>
+  &lArr; <%= link_to  'Go to Main Menu', current_user %>    </div><br>

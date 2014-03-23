@@ -46,6 +46,9 @@ class ResourcesController < ApplicationController
   end
 
   def new_project
+    if File.exists?("Outputfile.txt")
+      File.delete("Outputfile.txt")
+    end
     system "rake db:reset_data"
     flash[:success] = "Data destroyed!"
     redirect_to resources_path
